@@ -1,0 +1,60 @@
+block vars
+  - var pageTitle     = 'My Site';
+  - var pageName      = 'home';
+  - var bodyClass     = 'home';
+  - var cssFile       = false;
+  - var jsFile        = false;
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    //[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><![endif]
+    title=pageTitle
+    meta(name="description", content="My Site")
+    meta(name="keywords", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no")
+    link(rel="icon", href="favicon.png", type="image/x-icon", sizes="16x16")
+
+    //- Additional styles
+    block styles
+
+    if cssFile
+      link(rel="stylesheet", href="css/"+cssFile+".css")
+
+    //- Additional scripts
+    block head_scripts
+
+  body(class=bodyClass)
+    .site
+      //-
+      //- header
+      //-
+
+      //- Block before header
+      block header_before
+
+      include ../includes/header
+
+      //- Block after header
+      block header_after
+
+      //-
+      //- Main content
+      //-
+      main.main
+        block main
+
+      include ../includes/footer
+
+      //- Block after footer
+      block footer_after
+
+    //- Additional sctips
+    block footer_scripts
+
+    if jsFile
+      script(src='js/'+jsFile+'.js')
+
+    //- Additional sctips
+    block last_scripts
