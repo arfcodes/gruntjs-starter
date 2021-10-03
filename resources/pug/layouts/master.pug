@@ -2,6 +2,7 @@ block vars
   - var pageTitle     = 'My Site';
   - var pageName      = 'home';
   - var bodyClass     = 'home';
+  - var assetRoot     = '';
   - var cssFile       = false;
   - var jsFile        = false;
 
@@ -20,7 +21,7 @@ html(lang="en")
     block styles
 
     if cssFile
-      link(rel="stylesheet", href="css/"+cssFile+".css")
+      link(rel="stylesheet", href=assetRoot+"css/"+cssFile+".css")
 
     //- Additional scripts
     block head_scripts
@@ -54,7 +55,7 @@ html(lang="en")
     block footer_scripts
 
     if jsFile
-      script(src='js/'+jsFile+'.js')
+      script(src=assetRoot+'js/'+jsFile+'.js')
 
     //- Additional sctips
     block last_scripts

@@ -1,14 +1,7 @@
 module.exports = function (grunt) {
   'use strict';
 
-  var style_lib = [
-    // spinkit
-    './node_modules/spinkit/spinkit.css',
-  ];
-
-  var pugDest = 'public/';
-  var pugTask = ['pug'];
-  var sass = require('node-sass');
+  const sass = require('sass');
 
   //
   //Grunt config
@@ -113,7 +106,7 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: '<%= meta.pug_src %>pages',
+            cwd: '<%= meta.pug_src %>',
             src: ['**/*.pug'],
             dest: '<%= meta.pug_dist %>',
             ext: '.html',
