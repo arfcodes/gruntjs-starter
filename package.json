@@ -2,7 +2,7 @@
   "name": "@rfcodes/gruntjs-starter",
   "description": "Starter for build basic html website with gruntjs",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "author": {
     "name": "M Arif Mahthunisnaini",
